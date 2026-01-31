@@ -1,28 +1,28 @@
 # Ultra-Fast Port Scanner
 
-A high-performance port scanner written in Go using massive concurrency (Goroutines).
+Un scanner de ports haute performance écrit en Go utilisant une concurrence massive (Goroutines).
 
-## Features
+## Fonctionnalités
 
-- **Massive Concurrency**: Scans thousands of ports in seconds using lightweight Goroutines.
-- **Worker Pool**: Efficiently manages resources with a semaphore-based worker pool (default 1000 workers).
-- **Clean Output**: Displays results in a formatted table.
+- **Concurrence Massive** : Scanne des milliers de ports en quelques secondes en utilisant des Goroutines légères.
+- **Pool de Workers** : Gère efficacement les ressources avec un pool de workers basé sur un sémaphore (par défaut 1000 workers).
+- **Sortie Claire** : Affiche les résultats dans un tableau formaté.
 
 ## Installation
 
-1.  Clone the repository:
+1.  Clonez le dépôt :
     ```bash
-    git clone <repository-url>
+    git clone <url-du-depot>
     cd ultra-fast-port-scanner
     ```
-2.  Build the project (requires Go 1.21+):
+2.  Compilez le projet (nécessite Go 1.21+) :
     ```bash
     go build -o scanner cmd/scanner/main.go
     ```
 
-## Usage
+## Utilisation
 
-Run the compiled binary:
+Exécutez le binaire compilé :
 
 ```bash
 ./scanner -host example.com -start 1 -end 1024
@@ -30,15 +30,34 @@ Run the compiled binary:
 
 ### Options
 
-- `-host`: Target hostname or IP (default: `localhost`).
-- `-start`: Start port (default: `1`).
-- `-end`: End port (default: `1024`).
+- `-host` : Hôte cible ou adresse IP (par défaut : `localhost`).
+- `-start` : Port de début (par défaut : `1`).
+- `-end` : Port de fin (par défaut : `1024`).
 
 ## Performance
 
-Capable of scanning 1000 ports in under 3 seconds on standard network conditions.
+Capable de scanner 1000 ports en moins de 3 secondes dans des conditions réseau standard.
 
-## License
+## Structure du Projet
+
+```
+ultra-fast-port-scanner/
+├── cmd/
+│   └── scanner/
+│       └── main.go     # Point d'entrée
+├── pkg/
+│   ├── scan/
+│   │   ├── scan.go        # Module de scan des ports
+│   │   └── scan_test.go   # Tests unitaires
+│   └── report/
+│       ├── report.go        # Module de rapport
+│       └── report_test.go   # Tests unitaires
+├── go.mod
+├── README.md
+└── LICENSE
+```
+
+## Licence
 
 Copyright (c) 27 Janvier 2026 - Antigravity
-See [LICENSE](LICENSE) for details.
+Voir [LICENSE](LICENSE) pour plus de détails.
