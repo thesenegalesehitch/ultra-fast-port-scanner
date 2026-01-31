@@ -5,7 +5,7 @@
 // Ce programme scanne les ports d'une cible (hôte ou IP) en utilisant
 // la concurrence massive via les Goroutines Go pour une performance optimale.
 //
-// @author Antigravity
+// @author Alexandre Albert Ndour
 // @version 1.0.0
 // @date Janvier 2026
 // =============================================================================
